@@ -23,3 +23,9 @@ def predict(data: HouseInput):
     features = np.array([[data.rooms, data.size, data.age]])
     prediction = model.predict(features)[0]
     return {"prediction": round(prediction, 2)}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8080)
+
